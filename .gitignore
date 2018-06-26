@@ -1,1 +1,5 @@
 site.conf
+.terraform
+blog.pub
+terraform.tfstate
+terraform.tfstate.backup
