@@ -25,3 +25,5 @@ sudo certbot \
   --test-cert \
   --authenticator webroot
   --installer nginx
+
+docker pull ghost:1.24.5

@@ -9,4 +9,4 @@ docker run --name ghost \
  -e url=$URL \
  -v $LOCAL_MOUNT:/var/lib/ghost/content \
  --restart=always \
-  -d ghost:1.25.4
+  -d ghost:1.24.5
