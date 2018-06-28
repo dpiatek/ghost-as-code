@@ -1,4 +1,3 @@
-site.conf
 .terraform
 blog.pub
 terraform.tfstate

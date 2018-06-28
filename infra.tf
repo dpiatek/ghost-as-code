@@ -64,7 +64,7 @@ resource "aws_key_pair" "blog" {
 }
 
 resource "aws_instance" "blog" {
-  ami           = "ami-58d7e821"
+  ami           = "ami-255259cf"
   instance_type = "t2.micro"
   key_name      = "${aws_key_pair.blog.id}"
   security_groups = ["${aws_security_group.blog.name}"]

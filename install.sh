@@ -13,17 +13,7 @@ sudo add-apt-repository --yes ppa:certbot/certbot
 sudo apt update
 sudo apt-get install --yes python-certbot-nginx
 
-sudo rm sites-enabled/default
+sudo rm /etc/nginx/sites-enabled/default
 sudo mkdir /var/www/dominikpiatek.com
 
-sudo certbot \
-  --agree-tos \
-  --non-interactive \
-  --email do.piatek@gmail.com \
-  --webroot-path /var/www/dominikpiatek.com \
-  --domains dominikpiatek.com \
-  --test-cert \
-  --authenticator webroot
-  --installer nginx
-
-docker pull ghost:1.24.5
+sudo docker pull ghost:1.24.5
