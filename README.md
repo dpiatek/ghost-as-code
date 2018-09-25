@@ -24,14 +24,15 @@ Currently, following manual steps need to be done to deploy and the aim is to si
 
 Features:
 
+- add CI
 - improve reporting from scripts (or change to ansible)
 - remove domain specific data (from git too)
 - automate above
+- dry run for certs
 - blue/green deploys
 - non-local tf state
 - pass AMI to terraform
-- pass public dns to bash
-- run start and cert scripts remotely
+- pass ec2 public dns to bash
 - pass env vars to instance start scripts
 - fail silently when removing old ghost container
 - improve nginx config

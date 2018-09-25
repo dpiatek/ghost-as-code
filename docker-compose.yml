@@ -1,0 +1,19 @@
+version: "3"
+services:
+  nginx:
+    restart: unless-stopped
+    build: ./nginx
+    ports:
+      - 80:80/tcp
+      - 443:443/tcp
+    environment:
+      - CERTBOT_EMAIL
+  ghost:
+    restart: always
+    image: ghost:1.24.5
+    ports:
+      - "2368:2368"
+    environment:
+      - url=http://dominikpiatek.com
+    volumes:
+      - "/home/ubuntu/ghost/content:/var/lib/ghost/content"

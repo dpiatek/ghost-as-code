@@ -1,28 +1,34 @@
 {
-  "builders": [{
-    "profile": "private",
-		"region": "eu-west-1",
-		"type": "amazon-ebs",
-		"source_ami": "ami-58d7e821", 
-		"instance_type": "t2.micro",
-		"ssh_username": "ubuntu",
-		"ami_name": "blog {{timestamp}}"
-  }],
+  "builders": [
+    {
+      "profile": "private",
+      "region": "eu-west-1",
+      "type": "amazon-ebs",
+      "source_ami": "ami-58d7e821",
+      "instance_type": "t2.micro",
+      "ssh_username": "ubuntu",
+      "ami_name": "blog {{timestamp}}"
+    }
+  ],
   "provisioners": [
     {
-      "type": "file",
-      "source": "./blog.conf",
-      "destination": "/home/ubuntu/"
+      "type": "shell-local",
+      "command": "mkdir nginx"
     },
     {
       "type": "file",
-      "source": "./obtain-cert.sh",
-      "destination": "/home/ubuntu/"
+      "source": "./nginx/blog.conf",
+      "destination": "/home/ubuntu/nginx"
     },
     {
       "type": "file",
-      "source": "./start-ghost.sh",
-      "destination": "/home/ubuntu/"
+      "source": "./nginx/Dockerfile",
+      "destination": "/home/ubuntu/nginx"
+    },
+    {
+      "type": "file",
+      "source": "./docker-compose.yml",
+      "destination": "/home/ubuntu"
     },
     {
       "type": "shell",
