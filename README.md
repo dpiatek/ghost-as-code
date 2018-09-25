@@ -17,22 +17,17 @@ Currently, following manual steps need to be done to deploy and the aim is to si
 2.  Run backup script (if instance exists)
 3.  Run packer to create/update AMI
 4.  Run terraform to create/update infra (update AMI)
-5.  Run upload backup script (update public dns)
-6.  Source variables
-7.  Run script (from instance) to obtain cert
-8.  Run script (from instance) to start ghost
+5.  Run upload backup script (update public dns - $INSTANCE)
+6.  Run docker-compose on the instance
 
 Features:
 
 - add CI
-- improve reporting from scripts (or change to ansible)
 - remove domain specific data (from git too)
-- automate above
 - dry run for certs
 - blue/green deploys
 - non-local tf state
 - pass AMI to terraform
 - pass ec2 public dns to bash
 - pass env vars to instance start scripts
-- fail silently when removing old ghost container
 - improve nginx config
