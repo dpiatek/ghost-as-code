@@ -14,6 +14,6 @@ services:
     ports:
       - "2368:2368"
     environment:
-      - url=http://dominikpiatek.com
+      - url=https://dominikpiatek.com
     volumes:
       - "/home/ubuntu/ghost/content:/var/lib/ghost/content"
